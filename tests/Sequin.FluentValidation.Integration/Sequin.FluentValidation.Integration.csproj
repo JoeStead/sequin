@@ -4,15 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2C96DB63-FE44-4661-8E52-2B3416AFFDFB}</ProjectGuid>
+    <ProjectGuid>{A4BB5DC4-37B8-449A-A50F-09B6ADDDC80F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sequin.Integration</RootNamespace>
-    <AssemblyName>Sequin.Integration</AssemblyName>
+    <RootNamespace>Sequin.FluentValidation.Integration</RootNamespace>
+    <AssemblyName>Sequin.FluentValidation.Integration</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,6 +36,10 @@
     </Reference>
     <Reference Include="FluentAssertions.Core, Version=4.2.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FluentAssertions.4.2.1\lib\net45\FluentAssertions.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentValidation, Version=6.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentValidation.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Jil, Version=2.12.1.0, Culture=neutral, processorArchitecture=MSIL">
@@ -103,24 +105,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandTrackingPostProcessor.cs" />
     <Compile Include="Extensions\HttpResponseBody.cs" />
     <Compile Include="Extensions\StepMethods.cs" />
     <Compile Include="Extensions\TestServerCommands.cs" />
-    <Compile Include="CommandTrackingPostProcessor.cs" />
-    <Compile Include="Fakes\ExceptionCommand.cs" />
-    <Compile Include="Fakes\ExceptionCommandHandler.cs" />
-    <Compile Include="Fakes\MultiHandlerCommand.cs" />
-    <Compile Include="Fakes\MultiHandlerCommandHandler.cs" />
-    <Compile Include="Fakes\TrackedCommand.cs" />
-    <Compile Include="Fakes\TrackedCommandHandler.cs" />
-    <Compile Include="Fakes\UnconstructableCommandHandler.cs" />
+    <Compile Include="Fakes\ForcedValidatorException.cs" />
+    <Compile Include="Fakes\NonValidatedCommand.cs" />
+    <Compile Include="Fakes\NonValidatedCommandHandler.cs" />
+    <Compile Include="Fakes\ValidatedCommand.cs" />
+    <Compile Include="Fakes\ValidatedCommandHandler.cs" />
+    <Compile Include="Fakes\ValidatedCommandValidator.cs" />
     <Compile Include="FeatureBase.cs" />
-    <Compile Include="Features\CommandPipelineFeature.cs" />
-    <Compile Include="Features\CommandPostProcessingFeature.cs" />
-    <Compile Include="Features\OptionsHttpMethodFeature.cs" />
-    <Compile Include="Features\UrlCommandNameResolutionFeature.cs" />
+    <Compile Include="Features\CommandValidationFeature.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Features\CommandHandlingFeature.cs" />
+    <Compile Include="ReflectionValidatorFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -129,6 +127,14 @@
     <ProjectReference Include="..\..\src\Sequin.Core\Sequin.Core.csproj">
       <Project>{36063173-3b2b-4ca3-af13-6788e70eede1}</Project>
       <Name>Sequin.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Sequin.FluentValidation\Sequin.FluentValidation.csproj">
+      <Project>{29f3f13e-a42b-40c0-973e-3c074912ad40}</Project>
+      <Name>Sequin.FluentValidation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Sequin.Validation\Sequin.Validation.csproj">
+      <Project>{7c2acbdf-3019-43c1-9791-2300f298e34d}</Project>
+      <Name>Sequin.Validation</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Sequin\Sequin.csproj">
       <Project>{690b7ac2-1534-4268-89f2-82fbdd34ee25}</Project>

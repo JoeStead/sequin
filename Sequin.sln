@@ -13,6 +13,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DE248D3C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sequin.Integration", "tests\Sequin.Integration\Sequin.Integration.csproj", "{2C96DB63-FE44-4661-8E52-2B3416AFFDFB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sequin.FluentValidation.Integration", "tests\Sequin.FluentValidation.Integration\Sequin.FluentValidation.Integration.csproj", "{A4BB5DC4-37B8-449A-A50F-09B6ADDDC80F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sequin.Validation", "src\Sequin.Validation\Sequin.Validation.csproj", "{7C2ACBDF-3019-43C1-9791-2300F298E34D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sequin.Core", "src\Sequin.Core\Sequin.Core.csproj", "{36063173-3B2B-4CA3-AF13-6788E70EEDE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sequin.FluentValidation", "src\Sequin.FluentValidation\Sequin.FluentValidation.csproj", "{29F3F13E-A42B-40C0-973E-3C074912AD40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Web.FluentValidation", "samples\Sample.Web.FluentValidation\Sample.Web.FluentValidation.csproj", "{6DAA3E42-F47C-40AE-87C5-DBB4BE7CC865}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +41,26 @@ Global
 		{2C96DB63-FE44-4661-8E52-2B3416AFFDFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C96DB63-FE44-4661-8E52-2B3416AFFDFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C96DB63-FE44-4661-8E52-2B3416AFFDFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4BB5DC4-37B8-449A-A50F-09B6ADDDC80F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4BB5DC4-37B8-449A-A50F-09B6ADDDC80F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4BB5DC4-37B8-449A-A50F-09B6ADDDC80F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4BB5DC4-37B8-449A-A50F-09B6ADDDC80F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C2ACBDF-3019-43C1-9791-2300F298E34D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C2ACBDF-3019-43C1-9791-2300F298E34D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C2ACBDF-3019-43C1-9791-2300F298E34D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C2ACBDF-3019-43C1-9791-2300F298E34D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36063173-3B2B-4CA3-AF13-6788E70EEDE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36063173-3B2B-4CA3-AF13-6788E70EEDE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36063173-3B2B-4CA3-AF13-6788E70EEDE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36063173-3B2B-4CA3-AF13-6788E70EEDE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29F3F13E-A42B-40C0-973E-3C074912AD40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F3F13E-A42B-40C0-973E-3C074912AD40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F3F13E-A42B-40C0-973E-3C074912AD40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F3F13E-A42B-40C0-973E-3C074912AD40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DAA3E42-F47C-40AE-87C5-DBB4BE7CC865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DAA3E42-F47C-40AE-87C5-DBB4BE7CC865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DAA3E42-F47C-40AE-87C5-DBB4BE7CC865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DAA3E42-F47C-40AE-87C5-DBB4BE7CC865}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,5 +68,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B3ECC0E2-28C1-4C38-8117-DB0712F77D5A} = {C695FB8A-B3DE-44E1-AD43-4F619E0FF5FA}
 		{2C96DB63-FE44-4661-8E52-2B3416AFFDFB} = {DE248D3C-18AD-4EDD-8832-D48966FFD334}
+		{A4BB5DC4-37B8-449A-A50F-09B6ADDDC80F} = {DE248D3C-18AD-4EDD-8832-D48966FFD334}
+		{6DAA3E42-F47C-40AE-87C5-DBB4BE7CC865} = {C695FB8A-B3DE-44E1-AD43-4F619E0FF5FA}
 	EndGlobalSection
 EndGlobal

@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{690B7AC2-1534-4268-89F2-82FBDD34EE25}</ProjectGuid>
+    <ProjectGuid>{7C2ACBDF-3019-43C1-9791-2300F298E34D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sequin</RootNamespace>
-    <AssemblyName>Sequin</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>Sequin.Validation</RootNamespace>
+    <AssemblyName>Sequin.Validation</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,15 +31,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -53,37 +48,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandBus\ExclusiveHandlerCommandBus.cs" />
-    <Compile Include="CommandBus\NonExclusiveCommandHandlerException.cs" />
-    <Compile Include="Extensions\CommandAssemblyExtensions.cs" />
-    <Compile Include="Extensions\HandlerType.cs" />
-    <Compile Include="Infrastructure\CommandConstructionException.cs" />
-    <Compile Include="Infrastructure\EmptyCommandBodyException.cs" />
-    <Compile Include="Infrastructure\ReflectionCommandRegistry.cs" />
-    <Compile Include="Infrastructure\ReflectionHandlerFactory.cs" />
-    <Compile Include="Extensions\IOwinContextExtensions.cs" />
-    <Compile Include="Extensions\IOwinResponseExtensions.cs" />
-    <Compile Include="Infrastructure\UnidentifiableCommandException.cs" />
-    <Compile Include="Infrastructure\UnknownCommandException.cs" />
-    <Compile Include="Infrastructure\UrlCommandNameResolver.cs" />
-    <Compile Include="Middleware\HandleHttpOptions.cs" />
-    <Compile Include="SequinAppBuilderExtensions.cs" />
-    <Compile Include="SequinConfigurationException.cs" />
-    <Compile Include="SequinOptions.cs" />
-    <Compile Include="Infrastructure\CommandPipelineStage.cs" />
-    <Compile Include="Infrastructure\JsonDeserializerCommandFactory.cs" />
-    <Compile Include="Infrastructure\RequestHeaderCommandNameResolver.cs" />
-    <Compile Include="Middleware\DiscoverCommand.cs" />
-    <Compile Include="Middleware\IssueCommand.cs" />
+    <Compile Include="DefaultValidationFormatter.cs" />
+    <Compile Include="Infrastructure\IValidationResultFormatter.cs" />
+    <Compile Include="Infrastructure\ISequinValidatorFactory.cs" />
+    <Compile Include="Middleware\ValidateCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SequinValidationResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sequin.Core\Sequin.Core.csproj">
-      <Project>{36063173-3b2b-4ca3-af13-6788e70eede1}</Project>
-      <Name>Sequin.Core</Name>
+    <ProjectReference Include="..\Sequin\Sequin.csproj">
+      <Project>{690b7ac2-1534-4268-89f2-82fbdd34ee25}</Project>
+      <Name>Sequin</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
